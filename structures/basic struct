@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+struct employee{
+    int eid;
+    char name;
+    float salary;
+};
+int main(){
+  struct employee sharon;
+  sharon.eid=3207;
+  sharon.name='r';
+  sharon.salary=240000000;
+  cout<<sharon.eid<<endl;
+  cout<<sharon.name<<endl;
+  cout<<sharon.salary<<endl;
+return 0;
+}
