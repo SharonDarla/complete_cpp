@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+int main() {
+  int arr[]={23,45,56,78,67,89,34,77};
+  int *ptr;
+  ptr=arr;
+  cout<<*ptr<<endl;
+  cout<<*(ptr+1)<<endl;
+  cout<<*(ptr+2)<<endl;
+  cout<<*(ptr+3)<<endl;
+  cout<<"--------pointer increm---------"<<endl;
+  cout<<*(ptr++)<<endl;
+  cout<<*(ptr++)<<endl;
+  cout<<*(ptr++)<<endl;
+  cout<<*(ptr++)<<endl;
+  cout<<"---------pointer dec--------"<<endl;
+  cout<<*(ptr++)<<endl;
+  cout<<*(++ptr)<<endl;
+  cout<<*(ptr--)<<endl;
+  cout<<*(--ptr)<<endl;  
+}
