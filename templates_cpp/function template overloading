@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+void fun(int a){
+    cout<<"this is first fun."<<a<<endl;
+  }
+template <class T>
+void fun( T a){
+  cout<<"this is templetaised func."<<a<<endl;
+ }
+
+int main(){
+  
+  //fun(5); works for first func.
+  fun(5.7);
+
+  return 0;
