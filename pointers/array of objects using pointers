@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+class complex{
+int real,imag;
+  public:
+void setdata(int a,int b){
+  real=a;
+  imag=b;
+}
+void getdata(){
+  cout<<real<<"+i"<<imag<<endl;
+}
+};
+int main() {
+  // declaring objects using pointers
+  // complex *ptr=new complex;
+  // ptr->setdata(2,3);
+  // ptr->getdata();
+
+  // declaring array of objects using pointers
+  int size=3;
+  complex *ptr=new complex[size];
+  complex *ptrtemp=ptr;
+  int i;
+  for(i=0;i<size;i++){
+    ptr->setdata(2,3);
+    
+    ptr++;
+  }
+ for(i=0;i<size;i++){
+   ptrtemp->getdata();
+   ptr++;
+ }
+}
