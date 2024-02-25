@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+template <class T1 = int, class T2 = float, class T3 = char> 
+class sharon {
+public:
+  T1 a;           // a,b,c are class variables
+  T2 b;
+  T3 c;
+  sharon(T1 x, T2 y, T3 z) { // here we use x,y,z to accept values from main &
+    a = x;                   // assign them to our class
+    b = y;
+    c = z;
+  }
+  void display() {
+    cout << a << endl;
+    cout << b << endl;
+    cout << c << endl;
+  }
+};
+int main() {
+  sharon<> obj1(1, 2.3, 'o'); // default param so need to specify type,s is obj
+  obj1.display();
+  cout << endl;
+
+  sharon<float, char, char> obj2(8.99, 'm', 'p');
+  obj2.display();
+  cout << endl;
+
+  sharon<double, char, string> obj3(3.993, 'm', "sharon");
+  obj3.display();
+}
+//here, we can use any datatype just by changing them in main func.
