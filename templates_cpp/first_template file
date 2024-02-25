@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+template<class T>   //class datatype
+class number{
+    private:
+    T num;          // datatype num i.e., int or float num
+    public:
+    number( T n){   // ( datatype n)  //parameterized constructor
+        num = n;
+    }
+    T getnum(){     //int or float function()
+        return num;
+    }
+};
+int main(){
+    number<int>numberInt(7);                    // here numberInt is object_name
+    number<double>numberDouble(7.7);            //here numberDouble is object_name
+    cout<<" int number is "<<numberInt.getnum()<< endl;   // object_name.function_call()
+    cout<<" double number is "<< numberDouble.getnum()<< endl;
+    return 0;
+}
