@@ -1,0 +1,76 @@
+//declaring a list and using it
+#include<iostream>
+#include<list>
+using namespace std;
+void display(list<int> &lst){    
+  list<int> :: iterator it;                    // iterator to point to the elements of the list
+  for(it=lst.begin();it!=lst.end();it++){
+    cout<<*it<<" ";
+  }
+}
+
+int main(){
+  list<int> list1; //empty list of len-0
+  list1.push_back(5);
+  list1.push_back(7);
+  list1.push_back(8);
+  list1.push_back(9);
+  list1.push_back(2);
+  display(list1);
+}
+
+
+//other functions of list-merge, sort ,pop_back,pop_front,push_back,push_front
+
+#include<iostream>
+#include<list>
+using namespace std;
+void display(list<int> &lst){
+  list<int> :: iterator it;
+  for(it=lst.begin();it!=lst.end();it++){
+    cout<<*it<<" ";
+  }
+  cout<<endl;
+}
+
+int main(){
+  list<int> list1; //empty list of len-0
+  list1.push_back(5);
+  list1.push_back(7);
+  list1.push_back(8);
+  list1.push_back(9);
+  list1.push_back(2);
+  list<int>list2(3);   //declaring lsit 2 of size 3
+  list<int> :: iterator iter= list2.begin();
+  *iter=45;
+  iter++;
+  *iter=34;
+  iter++;
+  *iter=56;
+  iter++; 
+  display(list1);
+  cout<<endl;
+  display(list2);
+  cout<<endl;
+  // //merging before sorting
+  // list1.merge(list2);
+  // display(list1);
+  // cout<<endl;
+  //sorting
+  list1.sort();
+  display(list1);
+  // list1.pop_back();  // remove ele from rear or back
+  // display(list1);
+  // list1.pop_front();  //remoce ele from front
+  // display(list1);
+  // list1.remove(8); //remove ele from middle
+  // display(list1);
+  cout<<endl;
+  display(list2);
+  list2.sort();
+  display(list2);
+  cout<<endl;
+  //merging after sorting
+  list1.merge(list2);
+  display(list1);
+}
