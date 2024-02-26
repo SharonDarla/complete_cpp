@@ -18,6 +18,7 @@ int main(){
   vector<int>vec4(6,3); //length-6,ele-3
   cout<<"displaying vect:"<<endl;
   display(vec4);
+cout<<vec4.size();
   
   // int size;
   // float element;
