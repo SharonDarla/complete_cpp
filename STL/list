@@ -59,6 +59,8 @@ int main(){
   //sorting
   list1.sort();
   display(list1);
+  list1.reverse();  //reversing a list
+  display(list1);
   // list1.pop_back();  // remove ele from rear or back
   // display(list1);
   // list1.pop_front();  //remoce ele from front
