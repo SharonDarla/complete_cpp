@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+#include <iostream>
+#include<vector>
+
+using namespace std;
+void expVec(){
+  //different ways of declaring and initializing vectors
+//   vector<int>v;
+//   v.push_back(1);
+//   v.emplace_back(2);
+//   vector<pair<int,int>> vec;
+// //   vec.push_back({1,2});
+//   vec.emplace_back(1,2);
+
+  vector<int>vec1(5,100);
+//   vector<int>vec2(5);
+  vector<int>vec3(vec1);
+
+  // accessing elements
+//   vector<pair<int,int>>::iterator it = vec.begin();
+vector<int>::iterator it=vec3.begin();
+it++; //it++ returns next element without this it doent return next elements and v.begin() returns 1st ele only
+//   cout<<(it->first)<<" "<<it->second;
+  cout<<*(it)<<" ";
+  
+}
+int main() {
+  expVec();
+}
