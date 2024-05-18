@@ -1,0 +1,57 @@
+#include<iostream>
+#include<deque>
+#include<algorithm>
+using namespace std;
+
+//performing deque op's:
+
+void explainDeque(){
+    deque<int> dq;
+    dq.push_back(2);
+    dq.emplace_back(4);
+    dq.push_front(77);
+    dq.emplace_front(99);
+
+    dq.pop_back();
+    dq.pop_front();
+
+    cout<< "The last element in this deque is: "<< dq.back();
+    cout<<endl;
+
+    cout<<"The element at front in this deque is: "<< dq.front();
+    cout<<endl;
+
+    for(auto it : dq){
+        cout<< it <<" ";
+    }
+    cout<<endl;
+    cout<< "size of this deque is: "<< dq.size() << endl;
+
+    //clear and empty() functions: 
+    deque<int> dq1{1,2,3,4,5,6,7};
+    cout<< dq1.empty()<< endl;;
+    dq1.clear();
+    cout<<"the queue is: "<<endl;
+    for(auto it : dq1){
+        cout<< it <<" ";
+    }
+    cout<<dq1.empty();
+    cout<<endl;
+
+    //sort() in deque:
+
+    deque<int> dq2{9,5,89,34,2,1};
+    sort(dq2.begin(),dq2.end());
+    for(auto it : dq2){
+        cout<< it <<" ";
+    }
+
+    // H.w-->try swap() function
+
+
+}
+
+int main(){
+   explainDeque() ;
+return 0;
+}
