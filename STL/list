@@ -86,19 +86,19 @@ using namespace std;
 
 void explainList(){
 
-    list<int> ls;
-    ls.push_back(3);
-    ls.emplace_back(4);
-    ls.push_front(77);
-    ls.push_back(10);
-    ls.emplace_front(99);
-    cout<< "the size of this list is: "<< ls.size();
-    ls.pop_back();
+    // list<int> ls;
+    // ls.push_back(3);
+    // ls.emplace_back(4);
+    // ls.push_front(77);
+    // ls.push_back(10);
+    // ls.emplace_front(99);
+    // cout<< "the size of this list is: "<< ls.size();
+    // ls.pop_back();
 
-    for(auto it : ls ){
-        cout<< it <<" ";
-    }
-    cout<<endl;
+    // for(auto it : ls ){
+    //     cout<< it <<" ";
+    // }
+    // cout<<endl;
 
     /*
     //using clear(),empty() functions: 
@@ -138,9 +138,57 @@ void explainList(){
     }
     cout<<endl;
     */
-   
-}
 
+
+   /*
+   list<int> ls{1,2,3,4};
+   list <int> ::iterator it = ls.end();
+   it--;
+   cout<< *(it) <<" ";
+   */
+
+    // to reverse a vector using rbegin() and rend;
+    /* 
+    list<int> ls{1,2,3,4};
+    cout<<"The last element in orginal vector is: "<<ls.back();
+    cout<<endl;
+    for(auto it = ls.rbegin(); it != ls.rend(); it++){
+    cout<< *(it) <<" ";
+    }
+*/
+
+// list <int> ls{1,2,23,4,67};
+// ls.erase(ls.begin());
+// for(auto it : ls){
+//     cout<< it <<" ";
+// }
+
+    //using erase function to erase a specific range(or set) of elements in a list
+    list<int> ls{1,3,4,5,6,7};
+    for(auto it =ls.begin(); it!= ls.end(); ++it){
+        if(*it % 2 == 0){
+            it=ls.erase(it);
+        }
+        else{
+            ++it;
+        }
+    }
+    cout<< "the elements at odd indices are: ";
+    for(auto it : ls){
+        cout<< it <<" ";
+    }
+
+    //using copy function
+    /*
+    list<int> ls{1,3,4,5,6,7};
+    list<int> copy(2,50);
+    ls.insert(ls.begin(),copy.begin(),copy.end());
+    for(auto it : ls){
+        cout<< it <<" ";
+    }
+    */
+
+}
 int main(){
     explainList();
     return 0;
