@@ -1,0 +1,46 @@
+#include<iostream>
+#include<queue>
+#include<algorithm>
+using namespace std;
+    void PQ(){
+
+        // max-heap
+        priority_queue<int> pq;
+        pq.push(5); //{5}
+        pq.push(2);  //{5,2}
+        pq.push(8);  //{8,5,2}
+        pq.push(10); //{10,8,5,2}
+
+        cout<< "The top most elements of max heap: ";
+        cout<<pq.top() ; //prints 10
+
+        pq.pop();
+
+        cout<<endl;
+
+        cout<< pq.top();
+        cout<<endl;
+
+        //other functions:
+        cout<<"size of pq ie., max heap is: "<< pq.size() <<endl;
+
+        //min - heap
+
+        priority_queue<int, vector<int>, greater<int>> pq1; //taking 3 params, greater<int> sorts into ascending order
+        pq1.push(5);
+        pq1.push(2);
+        pq1.push(8);
+        pq1.push(10);
+
+        cout<< "The top most element of min heap: "<< pq1.top();
+        cout<<endl;
+
+        cout<<"Is this PQ(min heap) empty? --> "<< pq1.empty() << endl;
+
+        // H.W --> swap() fn 
+    }
+int main(){
+    PQ();
+    
+return 0;
+}
