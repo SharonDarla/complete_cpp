@@ -1,0 +1,67 @@
+#include<iostream>
+#include<queue>
+#include<algorithm>
+using namespace std;
+void explainQueue(){
+    queue<int> q;
+    q.push(1);
+    q.push(2);
+    q.emplace(4);
+
+    q.back() += 5;
+    cout<< "printing the rear ele in queue: "<< q.back()<<endl; // printing the back i,e., rear element
+
+    cout<<"printing the front ele in queue: "<< q.front()<<endl; 
+
+        /*
+        for(auto it : q){
+            cout<< it <<" ";
+        }  we cant directly use for loop to print queue elementss we have to use front() and pop() function 
+            to print the elements and pop them.
+        */
+
+    //using queue operations :
+
+    q.pop();
+    cout<< "the new front ele after popping is: "<< q.front()<<endl;
+
+    cout<< "the size of queue is: "<< q.size()<<endl;
+
+    cout<<"is the queue empty? --> "<< q.empty()<<endl;
+
+
+    while (!q.empty()){
+        cout<<q.front()<<" ";
+        q.pop();
+    }
+    cout<<endl;
+
+    /*
+    q.pop(); 
+    cout << q.front()<<endl;
+    this functions will not work here bcz after while loop , the queue bcms empty bcz it will 
+    pop() all the elements so this func() works on a empty queue so wil result an error 
+    sso to use them use it before the while loop
+    */
+
+
+   /*
+
+   tryna sort a queue but its not possible in this way refer sort code of queue.
+    queue<int> q1{6,3,5,2,8,1};
+    sort(q1.begin(),q1.end());
+    while(!q1.empty()){
+        cout<<q1.front()<<" "; 
+        q1.pop();
+    }
+    cout<<endl;
+    */
+    
+
+    //h.w --> try swap() function
+}
+int main(){
+    explainQueue();
+
+return 0;
+}
