@@ -1,0 +1,87 @@
+/*to sort a queue we cant directly use sort function,
+we need to create a vector and pass all these queue elemnts into vector,
+and sort those elements in that vector and print the elements.
+and for passing elements in a queue, we cant directly pass as parameter ie., q{1,2,3,4};
+we need to push all elememts one by one as of real life queue
+*/
+
+#include<iostream>
+#include<queue>
+#include<vector>
+#include<algorithm>
+
+using namespace std;
+    void sortQueue(){
+        queue<int> q;
+        q.push(6);
+        q.push(3);
+        q.push(5);
+        q.push(2);
+        q.push(8);
+        q.push(1);
+
+        //copy queue to vector
+
+        vector<int> v;
+        while( !q.empty()){
+            v.push_back(q.front());
+            q.pop();
+        }
+
+        //sort the vector
+        sort(v.begin(), v.end());
+
+        //printing sorted elements
+
+
+        /*here no need to use auto- we use auto when we dont know or
+        we dont wanna specify the type of variable if it is complex,
+        auto automatically reads the variable type by reading the variable i/p as in .py
+         */
+
+        for(int i : v){
+            cout<< i <<" ";
+        }
+        cout<< endl; 
+    }
+int main(){
+    sortQueue();
+
+return 0;
+}
+
+
+/*
+//we can also sort ele in queue using priority_queue
+
+#include<iostream>
+#include<queue>
+#include<vector>
+using namespace std;
+int main(){
+    queue<int> q1;
+    q1.push(6);
+    q1.push(3);
+    q1.push(5);
+    q1.push(2);
+    q1.push(8);
+    q1.push(1);
+
+    // Copy queue to a priority queue
+    priority_queue<int, vector<int>, greater<int>> pq;
+    while(!q1.empty()){
+        pq.push(q1.front());
+        q1.pop();
+    }
+
+    // Print the sorted elements
+    while(!pq.empty()){
+        cout << pq.top() << " ";
+        pq.pop();
+    }
+    cout << endl;
+
+    return 0;
+}
+
+*/
