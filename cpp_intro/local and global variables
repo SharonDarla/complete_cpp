@@ -1,0 +1,82 @@
+//(part-1 code)
+
+#include <iostream>
+using namespace std;
+ 
+int a = 5; //global variable
+ 
+void func()
+{
+    cout << a << endl;
+}
+ 
+int main()
+{
+    int a = 10; //local variable
+    cout << a << endl;
+    func();
+    return 0;
+}
+//output would be 2
+                  10
+
+//--------------------------------------------------
+(part-2:error)
+
+#include <iostream>
+using namespace std;
+
+int a=10;
+
+cout<<a<<endl; //trying to run a executable code outside the main function isnt allowed in cpp.
+                //In C++, you can only define " variables, classes, functions, and other similar constructs " at the global scope, but not execute code like cout.
+
+int main() {
+   int a=2;
+   cout<<a<<endl;
+    return 0;
+}
+
+//---------------------------------------------------------
+
+CORRECTION: HERE Cout was written before the declaration of local variable so it runs !
+
+#include <iostream>
+using namespace std;
+
+int a=10;
+
+int main() {
+
+    cout<<a<<endl;
+    int a=2;
+    cout<<a<<endl;
+    return 0;
+}
+//output : 10
+            2
+------------------------------------------------------------------
+
+contradiction :
+
+#include <iostream>
+#include <typeinfo>
+
+using namespace std;
+int a=10;
+
+
+int main() {
+    
+    int a=2;
+    cout<<a<<endl;
+    cout<<a<<endl;
+   
+    return 0;
+}
+
+// here global variable wont work since cout was written after declaratiion of local variable ,
+so output would be 
+2
+2
+so to correct it use function (part-1 code)
