@@ -1,0 +1,32 @@
+When to Use ->
+The -> operator is used when you have:
+
+1. A pointer to a structure (struct) or class.
+2. You want to access a member (variable or method) of that structure or class.
+
+example code:
+
+#include <iostream>
+using namespace std;
+
+// Define a structure called 'Person'
+struct Person {
+    string name;
+    int age;
+};
+
+int main() {
+    // Create an instance of 'Person'
+    Person p1;
+    p1.name = "Alice";
+    p1.age = 25;
+    
+    // Create a pointer to 'Person'
+    Person *ptr = &p1;
+    
+    // Use the '->' operator to access members of the structure
+    cout << "Name: " << ptr->name << endl;  // Equivalent to (*ptr).name
+    cout << "Age: " << ptr->age << endl;    // Equivalent to (*ptr).age
+
+    return 0;
+}
