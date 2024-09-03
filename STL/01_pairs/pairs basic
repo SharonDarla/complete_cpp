@@ -1,0 +1,63 @@
+syntax:
+
+type-1: pair <data_type1, data_type2> Pair_name (better not use much): this is default method.
+
+#include <iostream>
+#include <utility>
+using namespace std;
+
+int main()
+{
+	// defining a pair
+	pair<int, char> PAIR1;
+ 
+	PAIR1.first = 100; // first part of the pair
+	
+	PAIR1.second = 'G';  // second part of the pair
+
+	cout << PAIR1.first << " ";
+	cout << PAIR1.second << endl;
+
+	return 0;
+}
+-----------------------------------------------------------------------------
+
+type-2: pair <data_type1, data_type2> Pair_name (value1, value2) ;
+
+Different ways to initialize pair:  
+pair  g1;         //default
+pair  g2(1, 'a');  //initialized,  different data type
+pair  g3(1, 10);   //initialized,  same data type
+pair  g4(g3);    //copy of g3
+
+ACTUALLY PRACTICE THIS::
+
+// pairs are part of utility library
+// this is initialisation method
+#include<iostream>
+#include<utility>
+using namespace std;
+    void expVec(){
+        pair<int,int> p1{1,2};
+        cout<<p1.first<<" "<<p1.second<<endl;
+
+        pair<int,char>p2{1,'a'};
+        cout<<p2.first<<" "<<p2.second;
+        cout<<endl;
+
+        pair<int,double>p3{1,92.8};
+        cout<<"roll no is: "<<p3.first<<endl<<"score is: "<<p3.second<<endl;
+
+        pair<int,string>p4{3207,"sharon darla"};
+        cout<<"roll no: "<<p4.first<<endl<<"name is: "<<p4.second<<endl;
+    
+        //copy of pairs
+        pair<int,int> p(p1);
+        cout<<p1.first<<" "<<p1.second<<endl;
+    }
+int main(){
+    expVec();
+return 0;
+}
+
+-------------------------------------------------------------------------------
