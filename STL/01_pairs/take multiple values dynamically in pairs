@@ -1,0 +1,33 @@
+to take multiple values into pair at a time is to use vector<pair>
+
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+int main() {
+    vector<pair<int, string>> values;  // Vector to store pairs
+    int n;
+    cout<<"enter no. of entries: ";
+    cin>>n;
+
+    for (int i = 0; i < n; i++) {
+        int rollNo;
+        string name;
+
+        // Taking input for each pair
+        cout << "Enter roll number and name: ";
+        cin >> rollNo >> name;
+
+        // Adding the pair to the vector
+        // values.push_back(make_pair(rollNo, name));
+         values.emplace_back(rollNo, name);  // Directly adding pair to vector
+    }
+    cout<<"The data of students list is: \n";
+    // Displaying all the values
+    for (const auto& p : values) {
+        cout << "Roll No: " << p.first << ", Name: " << p.second << endl;
+    }
+
+    return 0;
+}
