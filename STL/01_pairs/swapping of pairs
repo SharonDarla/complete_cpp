@@ -1,0 +1,29 @@
+// main logic for swapping:  pair1.swap(pair2);
+
+#include<iostream>
+#include<vector>
+#include<utility>
+#include<string>
+
+using namespace std;
+    void expVec(){
+        
+        pair<int,string> pair1{01,"sharon"};
+        pair<int,string>pair2{02,"Turing"};
+        
+        
+        cout << "Before swapping:\n ";
+        cout << "Contents of pair1 : " << pair1.first << " "<< pair1.second <<endl;
+        cout << "Contents of pair2: " << pair2.first << " "<< pair2.second<<endl;
+        
+        pair1.swap(pair2);
+ 
+    cout << "\nAfter swapping:\n ";
+    cout << "Contents of pair1 = " << pair1.first << " "<< pair1.second<<endl;
+    cout << "Contents of pair2 = " << pair2.first << " "<< pair2.second<<endl;
+        
+    }
+int main(){
+    expVec();
+return 0;
+}
