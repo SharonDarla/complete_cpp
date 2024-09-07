@@ -1,0 +1,30 @@
+for using begin() like functions, we use this type of for loops :
+
+vector<int> vec = {10, 20, 30, 40, 50};
+
+    auto it = vec.begin();
+    cout << "The first element is: " << *it << endl;
+    cout << "All elements in the vector: ";
+
+    for (it = vec.begin(); it != vec.end(); ++it) {
+        cout << *it << " ";
+    }
+
+//where we use *it to access elements, 
+whereas in this type of for-each loop, we dont use *it because
+
+for (auto it : myVector) {
+    cout << it << " ";
+}
+
+reason:
+* operator is used to dereference the iterator, giving you access to the value it points to for begin() we are using iterators vec.begin() and vec.end() , so for that 
+we need * to dereference its value.
+
+for (auto it : myVector) {
+    cout << it << " ";
+}
+
+for this, we are using  : auto it directly represents the value of each element in the vector, not an iterator, 
+here we are pointing to elements directly on the vector not on iterators, hence we dont need (*)
+  
