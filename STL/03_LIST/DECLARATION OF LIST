@@ -1,1 +1,56 @@
+// VARIOUS TYPES OF DECLARATION IN LISTS
+
+#include<iostream>
+#include<list>
+using namespace std;
+
+//MOST STUPID METHOD, DONT USE - CREATING A DISPLAY FUNCTION
+
+void display(list<int> &lst){    
+  list<int> :: iterator it;   // iterator to point to the elements of the list
+  for( it = lst.begin(); it != lst.end(); it++){
+    cout<<*it<<" ";
+  }
+}
+
+int main(){
+
+  list<int> list1;   //empty list of len-0
+
+  list1.push_back(5);
+  list1.push_back(7);
+  list1.push_back(8);
+  list1.push_back(9);
+  list1.push_back(2);
+
+  list<int> lst{1,2,3,4,5};    //DECLARATION TYPE-2
+
+  list<int> lst(5);             //DECLARATION TYPE-3
+    // lst={1,2,3,4,5};
+    
+    lst.push_back(1);
+    lst.push_back(2);
+    lst.push_back(3);
+    lst.push_back(4);
+    lst.push_back(5);
+    lst.push_back(6);      // [ O/P: 0 0 0 0 0 1 2 3 4 5]
+
+  
+    list<int> lst(5);      // DECLARATION TYPE-4 
+
+    cout<<"enter list elements: \n";
+ 
+    // Use a range-based for loop to take input for each element in the list: USING AUTO TO TAKE INPUT AS WELL
+
+    for (auto& it : lst) {
+        cin >> it;
+    }
+   
+    display(list1);
+
+    //INSTEAD OF USING THE ABOVE DISPLAY FUNCTION AND CALLING IT USE THIS, IT SIMPLY PRINTS THE ELEMENTS ON TO THE CONSOLE :
+       for(auto it : lst){
+        cout<< it << " ";
+    }
+}
 
