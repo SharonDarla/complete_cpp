@@ -1,0 +1,35 @@
+// copying a range of elements:
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+int main ()
+{
+  vector<int> vec;
+  vec.push_back(1);
+  vec.push_back(2);
+  vec.push_back(3);
+  vec.push_back(4);
+  vec.push_back(5);
+  
+  
+//   vec.insert(vec.begin(),300);
+  
+   
+  vector<int> v2(2,50);
+  
+  cout << "vector-2 is: ";
+  for(auto it1 : v2){
+      cout << it1 <<" ";
+  }
+    
+    cout<< endl;
+  
+  vec.insert(vec.begin(),v2.begin(),v2.end()); //copying a range of elements, here we copied entire vector-2 v2 into vec
+  for(auto it : vec){
+      cout << it <<" ";
+  }
+
+  return 0;
+}
