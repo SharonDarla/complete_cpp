@@ -1,0 +1,15 @@
+for using begin() like functions, we use this type of for loops :
+
+vector<int> vec = {10, 20, 30, 40, 50};
+
+    auto it = vec.begin();
+    cout << "The first element is: " << *it << endl;
+    cout << "All elements in the vector: ";
+
+    for (it = vec.begin(); it != vec.end(); ++it) {
+        cout << *it << " ";
+    }
+
+//where we use *it to access elements, whereas 
+
+  
