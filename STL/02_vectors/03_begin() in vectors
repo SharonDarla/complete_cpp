@@ -1,0 +1,84 @@
+/* using begin() in vectors without using the complex method of declaring iterator it in long form :
+using simple and short method
+
+std::vector<int>::iterator it = myVector.begin(); // long method- eliminate this
+
+instead:
+*/
+
+// using auto iterator
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    // Initialize a vector with some values
+    vector<int> vec = {10, 20, 30, 40, 50};
+
+    // Use the begin() function with auto to get an iterator to the first element
+    auto it = vec.begin();
+
+    // Print the first element using the iterator
+    cout << "The first element is: " << *it << endl;
+
+    
+    cout << "All elements in the vector: ";
+    for (it = vec.begin(); it != vec.end(); ++it) {
+        cout << *it << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+method-2 :  avoid using iterators altogether,
+you can directly access elements using indices. Here’s a simpler way to initialize and use the begin() function with a range-based for loop:
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    
+    vector<int> myVector = {10, 20, 30, 40, 50};
+
+    // Print the first element using the begin() function
+
+    cout << "The first element is: " << *myVector.begin() << endl;
+
+    cout << "All elements in the vector: ";
+    for (const int& element : myVector) {
+        cout << element << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+//  vectors without explicitly using begin() or iterators. You can directly access elements using indices and a range-based for loop. Here’s an example:
+
+#include <iostream>
+#include <vector>
+
+int main() {
+    
+    std::vector<int> myVector = {10, 20, 30, 40, 50};
+
+    // Print the first element directly using the index
+    std::cout << "The first element is: " << myVector[0] << std::endl;
+
+    
+    cout << "All elements in the vector: ";
+    for (const int& element : myVector) {
+        cout << element << " ";
+    }
+
+    std::cout << std::endl;
+
+    return 0;
+}
