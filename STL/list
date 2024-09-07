@@ -2,9 +2,10 @@
 #include<iostream>
 #include<list>
 using namespace std;
+
 void display(list<int> &lst){    
-  list<int> :: iterator it;                    // iterator to point to the elements of the list
-  for(it=lst.begin();it!=lst.end();it++){
+  list<int> :: iterator it;   // iterator to point to the elements of the list
+  for( it = lst.begin(); it != lst.end(); it++){
     cout<<*it<<" ";
   }
 }
@@ -19,12 +20,13 @@ int main(){
   display(list1);
 }
 
-
+=========================================================================================
 //other functions of list-merge, sort ,pop_back,pop_front,push_back,push_front
 
 #include<iostream>
 #include<list>
 using namespace std;
+
 void display(list<int> &lst){
   list<int> :: iterator it;
   for(it=lst.begin();it!=lst.end();it++){
@@ -76,6 +78,7 @@ int main(){
   list1.merge(list2);
   display(list1);
 }
+
 =============================================================================================================
 Some important list ops:
 
@@ -189,6 +192,7 @@ void explainList(){
     */
 
 }
+
 int main(){
     explainList();
     return 0;
