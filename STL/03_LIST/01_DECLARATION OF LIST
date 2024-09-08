@@ -6,12 +6,26 @@ using namespace std;
 
 //MOST STUPID METHOD, DONT USE - CREATING A DISPLAY FUNCTION
 
+/*
 void display(list<int> &lst){    
   list<int> :: iterator it;   // iterator to point to the elements of the list
   for( it = lst.begin(); it != lst.end(); it++){
     cout<<*it<<" ";
   }
 }
+*/
+
+//instead of above display function, use this--
+
+void display(const list<int>& lst) {
+    for (const auto& it : lst) {
+        cout << it << " ";
+    }
+    cout << endl;
+}
+
+//const auto& is used to ensure that the elements are not modified and to avoid unnecessary copies.
+
 
 int main(){
 
