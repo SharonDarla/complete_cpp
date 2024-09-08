@@ -1,0 +1,84 @@
+// reversing array elemnts using another array(in-place)
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main(){
+    vector<int>v(5);
+    cout << "enter 5 elements in to array: \n";
+    for(int i=0;i<5;i++){
+        cin>>v[i];
+    }
+    vector<int>revarr(5);
+    for(int i=0;i<5;i++){
+        revarr[i]=v[5-i-1];
+    }
+    cout<< "array after reversing: \n";
+    for(int i=0;i<5;i++){
+        cout << revarr[i] << " ";
+    }
+	return 0;
+}
+----------------------------------------------------------------------------------
+//using two-ptr and a temp variable: 
+
+#include <iostream>
+#include<vector>
+using namespace std;
+
+int main()
+{   int n;
+    cout<<"enter no.of elements to insert in array: ";
+    cin>>n;
+    
+    vector<int> arr(n);
+    cout<< "enter elements: \n";
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    
+    int temp, start=0, end=n-1;  //here simply declaring temp is enough, no need of assigning temp=0, it causes redundancy& not a clean code practice.
+        while(start < end) {
+            temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
+        cout << "elements after reversing: \n";
+        for(int i=0;i<n;i++){
+        cout << arr[i] << " ";
+    }
+
+    return 0;
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//using inbuilt function reverse in std::algorithm
+
+#include <iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+
+int main()
+{   int n;
+    cout<<"enter no.of elements to insert in array: ";
+    cin>>n;
+    
+    vector<int> arr(n);
+    cout<< "enter elements: \n";
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    
+    reverse(arr.begin(),arr.end());  //for vectors use this; for startic arr -> reverse (arr,arr+n);
+    
+    cout << "elements after reversing: \n";
+    for(int i=0;i<n;i++){
+    cout << arr[i] << " ";
+    }
+
+    return 0;
+}
