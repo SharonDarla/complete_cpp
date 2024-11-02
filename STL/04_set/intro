@@ -1,0 +1,70 @@
+#include <iostream>
+#include<vector>
+#include<set>
+using namespace std;
+void expSet(){
+    set<int>st;
+    st.insert(10);
+    st.emplace(20);
+    st.insert(30);
+    st.insert(20);
+    st.emplace(30);
+    st.emplace(40);
+    st.emplace(50);
+    st.emplace(60);
+    st.emplace(70);
+    st.emplace(80);
+    
+    
+    
+    for(auto it : st){
+        cout<<it<<" ";
+    }
+    cout<<endl;
+    
+    st.erase(60);
+    
+    for(auto it : st){
+        cout<<it<<" ";
+    }
+    
+    cout<<endl;
+    auto it1 = st.find(30);
+    // cout<<*it1<<endl;
+    
+    //if we use (*) dereferencing ptr *it-> only address gets printed, 
+    // but if we use distance()function distance(st.begin(), it1) returns the index value
+    // it traverses from beginning of the set till the pos of value in a tree (bcz tree d.s is used)
+    auto it2=st.find(70);
+    
+    if (it1 != st.end()) {
+        int ind=distance(st.begin(), it1);
+    cout << "Found element: " <<ind << endl;
+    } else {
+    cout << "Element not found" << endl;
+    }
+    
+    
+   
+   //cnt no. of occurences of that ele
+    int cnt=st.count(20);
+    cout<<cnt<<endl;
+    
+    // to erase range of elements
+    st.erase(it1,it2);
+    cout<<endl;
+    
+    // printing set after erasing a range of elemenst
+    
+    for(auto it : st){
+        cout<<it<<" ";
+    }
+    cout<<endl;
+    
+}
+int main()
+{
+    expSet();
+    
+    return 0;
+}
