@@ -1,0 +1,36 @@
+#include <iostream>
+#include <set>
+using namespace std;
+
+void explainMultiSet(){
+    
+    multiset<int>ms;
+    ms.insert(1);
+    ms.emplace(2);
+    ms.insert(2);
+    ms.insert(2);
+    ms.insert(2);
+    ms.insert(20);
+    ms.insert(10);
+    ms.insert(5);
+   
+//   ms.erase(2);
+
+    // count no.of occurences of 2
+    
+    int cnt = ms.count(2);
+    cout << cnt <<endl;
+    
+    // to delete one occurence of 2 : after this, the count(2) --> 3 (ms.find() is a iterator points to the element)
+    // ms.erase(ms.find(2)); 
+    
+    for(auto it: ms){
+        cout<< it<<" ";
+    }
+    
+}
+int main()
+{
+    explainMultiSet();
+    return 0;
+}
